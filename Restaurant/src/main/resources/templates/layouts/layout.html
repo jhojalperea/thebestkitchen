@@ -1,0 +1,70 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:fragment="header">
+		<meta charset="UTF-8">			
+		<title>Restaurante el mejor sabor</title>
+		
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/jquery.dataTables.min.css}">
+		<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/jquery.dataTables.min.js}"></script>
+		<script th:src="@{/js/popper.min.js}" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script th:src="@{/js/bootstrap.min.js}" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script th:src="@{/js/tables.js}"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<style>
+			table.dataTable th { font-size: 14px; }
+			table.dataTable td { font-size: 14px; }
+			table.dataTable {
+			    border-collapse: collapse !important;
+			    border: 1px;
+			}
+			tbody td {
+			    padding: .3rem !important;
+			}
+			.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+			    padding: 0.1875rem 0.625rem !important;
+			    background: #2199e8 !important;
+			    color: #fff !important;
+			    cursor: default !important;
+			    border: 0px  !important;
+			    border-radius: 0px !important;
+			}
+			.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+				padding: 0.1875rem 0.625rem !important;
+    			color: #000 !important;
+    			border: 0px !important;
+    			background: #e6e6e6 !important;
+    			border-radius: 0px !important;
+    		}
+		</style>			
+	</head>
+	<body>
+	
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navbar">
+  			<a class="navbar-brand" th:href="@{/}">Inicio</a>
+  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+  			</button>
+
+  			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			<ul class="navbar-nav mr-auto">      				
+      				<li class="nav-item">
+        				<a class="nav-link" th:href="@{/createInvoice}">Crear Factura</a>
+      				</li>
+      				<li class="nav-item dropdown">
+				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				          Informes
+				        </a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				          <a class="dropdown-item" th:href="@{/invoiced}">Facturación por Camarero</a>
+				          <a class="dropdown-item" th:href="@{/purchasesGreater}">Top Compras clientes</a>				         
+				        </div>
+					</li>					
+    			</ul>
+  			</div>
+		</nav>
+
+	</body>
+</html>	

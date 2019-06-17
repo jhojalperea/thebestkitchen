@@ -1,0 +1,37 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:replace="layouts/layout :: header"></head>
+	
+	<body>
+		<div th:insert="~{layouts/layout :: navbar}"></div>		
+	    
+	    <div class="container mt-3">			
+			<h4 class="mt-2">Facturación</h4>
+			<table id="invoiced" class="table table-striped table-responsive-md">
+			    <thead>
+			        <tr>
+			            <th>ID Camarero</th>
+			            <th>Camarero</th>
+			            <th>Periodo</th>
+			            <th>Total</th>			            		            		            
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="invoice : ${invoices}">
+			            <td th:text="${invoice.waiterId}"></td>
+			            <td th:text="${invoice.waiter}"></td>
+			            <td th:text="${invoice.period}"></td>
+			            <td style="text-align:right;" th:text="${invoice.total}"></td>
+			            <!-- 
+			            <td>
+			            	<a th:href="@{/students/edit/{id}(id=${student.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a>			            
+			            	<a th:href="@{/students/delete/{id}(id=${student.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a>
+			            </td>
+			            -->
+			        </tr>
+			    </tbody>
+			</table>
+		</div>					
+	</body>
+</html>
