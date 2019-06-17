@@ -1,4 +1,6 @@
-El proyecto esta desarrollado en base de datos de Mysql.
+PROYECTO RESTAURANTE LA MEJOR COCINA 
+
+El proyecto usa el motor de base de datos de Mysql.
 
 Los pasos para poner en ejecución el proyecto son los siguientes:
 
